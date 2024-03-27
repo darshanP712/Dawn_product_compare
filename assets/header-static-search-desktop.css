@@ -1,0 +1,9 @@
+@media screen and (min-width: 990px){
+  body .header__icons .search_desktop {opacity: 1 !important;}
+  body .header__icons .search_desktop .field__input{min-width: calc(47rem + (var(--inputs-border-width) * 2));}    
+  .header--top-left .header__inline-menu {justify-self: center;}
+  .header__icons .header__search.search_mobile{display: none;}    
+}
+@media screen and (max-width: 989px){
+  body .header__icons .search_desktop {display: none;}
+}

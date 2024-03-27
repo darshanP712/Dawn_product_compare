@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "39b877c6-13ab-40c8-916e-fb1afbf0c429": {
+          "type": "text",
+          "settings": {
+            "text": "Now Carrying Memorabilia",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP MEMORABILIA",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "39b877c6-13ab-40c8-916e-fb1afbf0c429",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_Image_July_17.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": true
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-3d22fbff-0b22-4d3c-86c4-50b3b4e81256",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "a4f92fb7-6302-47ad-a4b4-27d98a058f9f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-heading-1",
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-text-1",
+        "template--16189979459773__a4f92fb7-6302-47ad-a4b4-27d98a058f9f-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3d22fbff-0b22-4d3c-86c4-50b3b4e81256",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "a4f92fb7-6302-47ad-a4b4-27d98a058f9f"
+  ]
+}
