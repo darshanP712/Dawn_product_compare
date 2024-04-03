@@ -94,6 +94,12 @@ class FacetFiltersForm extends HTMLElement {
     const containerDesktop = document.getElementById('ProductCountDesktop');
     container.innerHTML = count;
     container.classList.remove('loading');
+
+    // Facets in add custom product compare code start
+    this.productCompare = document.querySelector('product-compare');
+    this.productCompare.setupButtons(); 
+    // Facets in add custom product compare code start
+    
     if (containerDesktop) {
       containerDesktop.innerHTML = count;
       containerDesktop.classList.remove('loading');

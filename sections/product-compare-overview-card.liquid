@@ -1,0 +1,25 @@
+{%- unless product == blank -%}
+    <div class="main-products-item" data-product="{{- product.handle -}}">
+      <div class="products-image-square-left">
+        <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
+      </div>
+  
+      <div class="products-title-center">
+        <a href="{{- product.url -}}" class="products-title-center-text">
+          {{- product.title -}}
+        </a>
+      </div>
+  
+      <div class="products-button-right">
+        <button class="products-button-right-btn" data-remove>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
+              <line x1="38" y1="10" x2="10" y2="38"></line>
+              <line x1="38" y1="38" x2="10" y2="10"></line>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  {%- endunless -%}
+  
