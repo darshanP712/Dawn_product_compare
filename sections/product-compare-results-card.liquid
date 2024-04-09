@@ -1,78 +1,57 @@
 <div class="product-compare-results-card-main" data-module="product-compare-results-card">
-    <div class="product-card-wrapper" data-product>
-      <a href="{{- product.url -}}" class="compare-products-image">
-        {%- for image in product.images limit: 2 -%}
-          {%- if forloop.first -%}
-            <div class="products-image-1">
-              <img clas="products_images" src="{{ image | image_url }}" alt="{{ product.title }}">
-            </div>
-          {%- endif -%}
-          {%- if forloop.last -%}
-            <div class="products-image-2">
-              <img class="products_images" src="{{ image | image_url }}" alt="{{ product.title }}">
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </a>
-  
-      <div class="card-information" data-product-content>
-        {%- if product.title != blank -%}
-          <h3 class="card__heading">
-            <a href="{{- product.url -}}" class="full-unstyled-link">{{- product.title -}}</a>
-          </h3>
-        {% endif %}
+  <div class="product-card-wrapper">
+    <a href="{%- if product.url != blank -%}{{- product.url -}}{% else %}javascript:void(0){%- endif -%}" class="compare-products-image custom-border-bottom">
+      {%- for image in product.images limit: 2 -%}
+        {%- if forloop.first -%}
+          <div class="products-image-1">
+            <img clas="products_images" src="{{ image | image_url }}" alt="{{ product.title }}">
+          </div>
+        {%- endif -%}
+        {%- if forloop.last -%}
+          <div class="products-image-2">
+            <img class="products_images" src="{{ image | image_url }}" alt="{{ product.title }}">
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </a>
+    
+    <h3 class="card__heading custom-border-bottom">
+      <a href="{%- if product.url != blank -%}{{- product.url -}}{% else %}javascript:void(0){%- endif -%}" class="full-unstyled-link">
+        {%- if product.title != blank -%}{{- product.title | capitalize -}}{% else %}-{% endif %}</a>
+    </h3>
         
-        <div class="price__container">
-          {%- if product.compare_at_price > product.price -%}
-            <div class="price__regular">
-              <span class="price-item price-item--regular">{{- product.price | money -}}</span>
-            </div>
-            <div class="product-compare-price">
-              <span class="price-item price-item--last">{{- product.compare_at_price | money -}}</span>
-            </div>
-          {%- else -%}
-            <div class="font-normal text-black">{{- product.price | money -}}</div>
-          {%- endif -%}
+    <div class="price__container custom-border-bottom" >
+      {%- if product.compare_at_price > product.price -%}
+        <div class="price__regular">
+          <span class="price-item price-item--regular">{{- product.price | money -}}</span>
         </div>
-        
-        {%- if product.selected_or_first_available_variant.sku != blank -%}
-          <div class="product_sku">
-            <span><b>{{ 'products.product.sku' | t }}: </b></span>
-            {{- product.selected_or_first_available_variant.sku -}}
-          </div>
-        {% endif %}
-  
-        {%- if product.vendor != blank -%}
-          <div class="product_vendor"> <span><b>Vendor: </b></span>{{- product.vendor -}}</div>
-        {% endif %}
-        
-        {%- if product.type != blank -%}
-          <div class="product_type"> <span><b>Type: </b></span>{{- product.type -}}</div>
-        {% endif %}
-        
-        {%- unless product.has_only_default_variant -%}
-          <div class="custom-product-form__variants">
-            {% render 'product-compare-variant-picker', product: product %}
-          </div>
-        {%- endunless -%}
-  
-        {% if product.metafields.custom.features != blank %}
-          <div class="product_feature">
-            <span><b>Features: </b></span>{{- product.metafields.custom.features -}}
-          </div>
-        {% endif %}
-        
-        {%- if product.description != blank -%}
-          <div class="product-description">
-            <p>
-              {{ product.description | strip_html | truncate: 250 }}
-              <a href="{{- product.url -}}" class="product-description-read-more">Read more</a>
-            </p>
-          </div>
-        {% endif %}
-      </div>
-  
-      <a href="{{- product.url -}}" class="products-view">View Product</a>
+        <div class="product-compare-price">
+          <span class="price-item price-item--last">{{- product.compare_at_price | money -}}</span>
+        </div>
+      {%- else -%}
+        <div class="font-normal text-black">{%- if product.price != blank -%}{{- product.price | money -}}{% else %}-{% endif %}</div>
+      {%- endif -%}
     </div>
+
+    <div class="product_sku custom-border-bottom">
+      {%- if product.selected_or_first_available_variant.sku != blank -%}{{- product.selected_or_first_available_variant.sku -}}{% else %}-{% endif %}
+    </div>
+    
+    <div class="product_vendor custom-border-bottom">{%- if product.vendor != blank -%}{{- product.vendor | capitalize -}}{% else %}-{% endif %}</div>
+
+    <div class="product_type custom-border-bottom">{%- if product.type != blank -%}{{- product.type | capitalize -}}{% else %}-{% endif %}</div>
+
+    {%- unless product.has_only_default_variant -%}
+      <div class="custom-product-form__variants custom-border-bottom">
+        {% render 'product-compare-variant-picker', product: product %}
+      </div>
+    {%- endunless -%}
+
+    <div class="product_feature custom-border-bottom">{% if product.metafields.custom.features != blank %}{{- product.metafields.custom.features -}}{% else %} - {% endif %}</div>
+      <div class="product-description custom-border-bottom">
+      <p> {%- if product.description != blank -%}{{ product.description | strip_html | truncate: 180 }}{% else %} - {% endif %} </p>
+    </div>
+
+    <a href="{%- if product.url != blank -%}{{- product.url -}}{% else %}javascript:void(0){%- endif -%}" class="products-view">View Product</a>
   </div>
-  
+</div>

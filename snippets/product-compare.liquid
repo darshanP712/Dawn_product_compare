@@ -1,63 +1,126 @@
 <product-compare data-module="product-compare">
-    <button class="right-side-tab" data-tab>Compare <span class="text-sm" data-count>()</span></button>
-    <div class="product-list-comapre" data-overview>
-      <button class="product-list-comapre-close" data-title aria-label="Close Product Compare">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-          <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
-            <line x1="38" y1="10" x2="10" y2="38"></line>
-            <line x1="38" y1="38" x2="10" y2="10"></line>
-          </g>
-        </svg>
-      </button>
-  
-      <div class="product-list-compare-main">
-        <div class="product-list-compare-main-top">
-          <button class="button-bg" data-title aria-label="Close Product Compare">
-            Compare <span class="text-sm" data-count>()</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-              <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
-                <polyline points="4,14 24,34 44,14"></polyline>
-              </g>
-            </svg>
-          </button>
+  <button class="right-side-tab" data-tab>Compare <span class="text-sm" data-count>()</span></button>
+  <div class="product-list-comapre" data-overview>
+    <button class="product-list-comapre-close" data-title aria-label="Close Product Compare">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
+          <line x1="38" y1="10" x2="10" y2="38"></line>
+          <line x1="38" y1="38" x2="10" y2="10"></line>
+        </g>
+      </svg>
+    </button>
+
+    <div class="product-list-compare-main">
+      <div class="product-list-compare-main-top">
+        <button class="button-bg" data-title aria-label="Close Product Compare">
+          Compare <span class="text-sm" data-count>()</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
+              <polyline points="4,14 24,34 44,14"></polyline>
+            </g>
+          </svg>
+        </button>
+      </div>
+
+      <div class="product-list-comapre-error"><p></p></div>
+
+      <div class="product-list-compare-main-center">
+        <div class="product-list-compare-main-center-sub">
+          {%- for i in (1..4) -%}
+            <div class="comapre-product-holder" data-product-holder>
+              <p class="comapre-product-select">Select a product to compare</p>
+            </div>
+          {%- endfor -%}
         </div>
-  
-        <div class="product-list-comapre-error"><p></p></div>
-  
-        <div class="product-list-compare-main-center">
-          <div class="product-list-compare-main-center-sub">
-            {%- for i in (1..3) -%}
-              <div class="comapre-product-holder" data-product-holder>
-                <p class="comapre-product-select">Select a product to compare</p>
+
+        <div class="compare-clear-button ">
+          <button class="button-compare-alls" data-compare-all>Compare</button>
+          <button class="button-compare-clear-all" data-compare-clear>Clear all</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-products-results" data-results>
+    <button class="compare-products-results-close" data-close>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
+          <line x1="38" y1="10" x2="10" y2="38"></line>
+          <line x1="38" y1="38" x2="10" y2="10"></line>
+        </g>
+      </svg>
+    </button>
+
+    <div class="compare-products__title">
+      <h2 class="compare-title">Product Compare</h2>
+    </div>
+    <div class="compare-products-results-details">
+      <div class="compare-products-results-details-full-products" data-products>
+        <div id="shopify-section-product-compare-results-card" class="shopify-section custom-set-tabel">
+          <div class="product-compare-results-card-main" data-module="product-compare-results-card">
+            <div class="product-card-wrapper">
+              <a href="javascript:void(0)" class="compare-products-image"style="opacity: 0;">
+                <div class="products-image-1">
+                  <img clas="products_images" src="//cdn.shopify.com/s/files/1/0510/6247/2893/products/85cc58608bf138a50036bcfe86a3a362.jpg?v=1704804686" alt="Adidas | class backpack" >
+                </div>
+                <div class="products-image-2">
+                  <img class="products_images" src="//cdn.shopify.com/s/files/1/0510/6247/2893/products/8a029d2035bfb80e473361dfc08449be.jpg?v=1704804686" alt="Adidas | class backpack">
+                </div>
+              </a>
+              <h3 class="card__heading custom-border-bottom">
+                <a href="javascript:void(0)" class="full-unstyled-link"><b>Title</b></a>
+              </h3>
+              <div class="price__container custom-border-bottom">
+                <div class="font-normal text-black"><b>Price</b></div>
               </div>
-            {%- endfor -%}
-          </div>
-  
-          <div class="compare-clear-button ">
-            <button class="button-compare-alls" data-compare-all>Compare</button>
-            <button class="button-compare-clear-all" data-compare-clear>Clear all</button>
+              <div class="product_sku custom-border-bottom">
+                <span>
+                  <b>SKU: </b>
+                </span>
+              </div>
+              <div class="product_vendor custom-border-bottom">
+                <span>
+                  <b>Vendor: </b>
+                </span>
+              </div>
+              <div class="product_type custom-border-bottom">
+                <span>
+                  <b>Type: </b>
+                </span>
+              </div>
+              <div class="custom-product-form__variants custom-border-bottom">
+                <variant-selects class="no-js-hidden">
+                  <fieldset class="js product-form__input product-form__input--pill custom-border-bottom ">
+                    <div>
+                      <b>Size:</b>
+                    </div>
+                  </fieldset>
+                  <fieldset class="js product-form__input product-form__input--pill">
+                    <div>
+                      <b>Color:</b>
+                    </div>
+                  </fieldset>
+                </variant-selects>
+              </div>
+              <div class="product_feature custom-border-bottom">
+                <span>
+                  <b>Features: </b>
+                </span>
+              </div>
+              <div class="product-description custom-border-bottom">
+                <p><b>Description:</b></p>
+              </div>
+              <div class="View_more_btn products-view">
+               <b>Products View </b>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
-    <div class="compare-products-results" data-results>
-      <button class="compare-products-results-close" data-close>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-          <g stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke-miterlimit="10">
-            <line x1="38" y1="10" x2="10" y2="38"></line>
-            <line x1="38" y1="38" x2="10" y2="10"></line>
-          </g>
-        </svg>
-      </button>
-  
-      <div class="compare-products-results-details">
-        <div class="compare-products-results-details-full-products" data-products></div>
-      </div>
-    </div>
-  </product-compare>
-  
-  {% comment %} Product compare css start {% endcomment %}
-  {% render 'product-compare-css' %}
-  {% comment %} Product compare css end {% endcomment %}
-  
+  </div>
+</product-compare>
+
+{% comment %} Product compare css start {% endcomment %}
+{% render 'product-compare-css' %}
+{% comment %} Product compare css end {% endcomment %}

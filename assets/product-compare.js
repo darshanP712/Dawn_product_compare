@@ -20,6 +20,7 @@ class ProductCompare extends HTMLElement {
       this.getOverviewCards();
       this.tabEl.classList.add('active');
     }
+    
     document.querySelector('[data-header-compare]').addEventListener('click', function () {
       document.querySelector('[data-tab]').classList.remove('active');
       document.querySelector('[data-overview]').classList.add('active');
@@ -108,12 +109,12 @@ class ProductCompare extends HTMLElement {
     this.overviewEl.classList.remove('active');
   }
  add(handle) {
-    if (this.products.length === 3) {
+    if (this.products.length === 4) {
 
       const customDivError3  = document.querySelector('.product-list-comapre-error');
       customDivError3.innerHTML = `
         <p class="active">Max products added</p>
-        <p class="active">You already have 3 products to compare, please remove one to add a new product.</p>
+        <p class="active">You already have 4 products to compare, please remove one to add a new product.</p>
       `;
 
       setTimeout(() => {
@@ -231,7 +232,9 @@ class ProductCompare extends HTMLElement {
   closeResults() {
     document.body.classList.remove('overflow-hidden');
     this.resultsEl.classList.remove('active');
-    this.resultsEl.querySelector('[data-products]').innerHTML = '';
+    this.resultsEl.querySelector('[data-products]').innerHTML = `<div id="shopify-section-product-compare-results-card" class="shopify-section custom-set-tabel"><div class="product-compare-results-card-main" data-module="product-compare-results-card"><div class="product-card-wrapper"><a href="javascript:void(0)" class="compare-products-image"style="opacity: 0;"><div class="products-image-1"><img clas="products_images" src="//cdn.shopify.com/s/files/1/0510/6247/2893/products/85cc58608bf138a50036bcfe86a3a362.jpg?v=1704804686" alt="Adidas | class backpack" ></div><div class="products-image-2"><img class="products_images" src="//cdn.shopify.com/s/files/1/0510/6247/2893/products/8a029d2035bfb80e473361dfc08449be.jpg?v=1704804686" alt="Adidas | class backpack"></div></a><h3 class="card__heading custom-border-bottom"><a href="javascript:void(0)" class="full-unstyled-link"><b>Title</b></a></h3><div class="price__container custom-border-bottom"><div class="font-normal text-black"><b>Price</b></div></div>
+<div class="product_sku custom-border-bottom"><span><b>SKU: </b></span></div><div class="product_vendor custom-border-bottom"><span><b>Vendor: </b></span></div><div class="product_type custom-border-bottom"><span><b>Type: </b></span></div><div class="custom-product-form__variants custom-border-bottom"><variant-selects class="no-js-hidden"><fieldset class="js product-form__input product-form__input--pill custom-border-bottom "><div><b>Size:</b></div></fieldset><fieldset class="js product-form__input product-form__input--pill"><div><b>Color:</b></div></fieldset></variant-selects></div><div class="product_feature custom-border-bottom"><span>
+<b>Features: </b></span></div><div class="product-description custom-border-bottom"><p><b>Description:</b></p></div><div class="View_more_btn products-view"><b>Products View</b></div></div></div></div>`;
     document.removeEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closeResults();
@@ -244,7 +247,7 @@ class ProductCompare extends HTMLElement {
       fetch(`/products/${handle}?section_id=product-compare-results-card`)
         .then(response => response.text())
         .then((product) => {
-          this.resultsEl.querySelector('[data-products]').insertAdjacentHTML('beforeend', product);
+           this.resultsEl.querySelector('[data-products]').insertAdjacentHTML('beforeend', product);
         })
     );
 
